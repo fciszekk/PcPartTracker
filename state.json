@@ -1,1 +1,25 @@
-{}
+{
+  "corsair_vergeance": {
+    "amazon": {
+      "in_stock": false,
+      "prices": []
+    },
+    "overclockers": {
+      "in_stock": false,
+      "prices": []
+    },
+    "newegg": {
+      "in_stock": false,
+      "prices": [
+        {
+          "price": 203.99,
+          "date": "2025-12-23 18:56"
+        }
+      ]
+    },
+    "paradigit": {
+      "in_stock": false,
+      "prices": []
+    }
+  }
+}
