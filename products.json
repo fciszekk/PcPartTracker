@@ -21,7 +21,7 @@
       {
         "site": "newegg",
         "currency": "GBP",
-        "url": "https://www.newegg.com/global/uk-en/corsair-vengeance-16gb-ddr5-5200-cas-latency-cl40-desktop-memory-black/p/N82E16820236993"
+        "url": "https://www.newegg.com/p/N82E16820236993"
       },
       {
         "site": "paradigit",
@@ -31,8 +31,8 @@
     ]
   },
   {
-    "id": "asus_prime",
-    "name": "Asus Prime Test",
+    "id": "motherboard",
+    "name": "Motherboard Test",
     "max_price": {
       "GBP": 500,
       "EUR": 150,
@@ -57,7 +57,7 @@
       {
         "site": "paradigit",
         "currency": "EUR",
-        "url": "https://www.paradigit.ie/ASUS-Prime-Radeon-RX-9060-XT-8GB-GDDR6-OC-Edition/21819013/product"
+        "url": "https://www.paradigit.ie/ASRock-B650M-HDV-M-2/21299965/product"
       }
     ]
   }
