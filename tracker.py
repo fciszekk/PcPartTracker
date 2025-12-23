@@ -8,6 +8,10 @@ import os
 DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 EMAIL_FROM = os.environ["EMAIL_FROM"]
 EMAIL_PASSWORD = os.environ["EMAIL_PASSWORD"]
+STATE_FILE = "state.json"
+USER_AGENTS_FILE = "user_agents.txt"
+ROLLING_WINDOW = 50  # Keep last 50 prices per site
+RESET_HOURS = 24     # Partial reset window
 # =========================================
 
 def get_headers():
@@ -86,7 +90,7 @@ def send_discord(product, price, history):
     }
     requests.post(DISCORD_WEBHOOK, json={"embeds": [embed]})
 
-def send_sms(message):
+def send_email(message):
     msg = EmailMessage()
     msg["From"] = EMAIL_FROM
     msg["To"] = EMAIL_FROM
@@ -99,9 +103,42 @@ def send_sms(message):
 # ---------- MAIN ----------
 
 def main():
+     # Load or initialize state
+    if os.path.exists(STATE_FILE):
+        state = json.load(open(STATE_FILE))
+    else:
+        state = {}
+
+    now = datetime.datetime.utcnow()
+    last_reset_str = state.get("last_reset")
+    reset_needed = True
+    if last_reset_str:
+        try:
+            last_reset = datetime.datetime.fromisoformat(last_reset_str)
+            delta = now - last_reset
+            if delta.total_seconds() < RESET_HOURS * 3600:
+                reset_needed = False
+        except:
+            reset_needed = True
+
+    if reset_needed:
+        print("Partial reset: clearing old price data older than 24h")
+        # Keep only last 24h of price entries
+        for product_id in state:
+            if product_id == "last_reset":
+                continue
+            for site in state[product_id]:
+                prices = state[product_id][site].get("prices", [])
+                new_prices = [
+                    p for p in prices
+                    if datetime.datetime.fromisoformat(p["date"]) > now - datetime.timedelta(hours=RESET_HOURS)
+                ]
+                state[product_id][site]["prices"] = new_prices
+        state["last_reset"] = now.isoformat()
+
+    
     # 1️⃣ Load data
     products = json.load(open("products.json"))
-    state = json.load(open("state.json"))
 
     # 2️⃣ Define parsers mapping
     parsers = {
@@ -154,16 +191,17 @@ def main():
                     url=url
                 )
 
-                send_sms(
+                send_email(
                     f"{product['name']} ({site_name}) IN STOCK\n"
                     f"{currency} {price}\n{url}"
                 )
 
             site_state["in_stock"] = in_stock
 
-    # 4️⃣ Save state
-    json.dump(state, open("state.json", "w"), indent=2)
-
+     # Save state
+    if "last_reset" not in state:
+        state["last_reset"] = now.isoformat()
+    json.dump(state, open(STATE_FILE, "w"), indent=2)
 
 if __name__ == "__main__":
     main()
