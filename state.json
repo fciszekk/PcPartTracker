@@ -27,6 +27,34 @@
         {
           "price": 203.99,
           "date": "2025-12-23 20:06"
+        },
+        {
+          "price": 203.99,
+          "date": "2025-12-23 20:16"
+        }
+      ]
+    },
+    "paradigit": {
+      "in_stock": false,
+      "prices": []
+    }
+  },
+  "last_reset": "2025-12-23T20:16:14.640798",
+  "asus_prime": {
+    "amazon": {
+      "in_stock": false,
+      "prices": []
+    },
+    "overclockers": {
+      "in_stock": false,
+      "prices": []
+    },
+    "newegg": {
+      "in_stock": false,
+      "prices": [
+        {
+          "price": 203.99,
+          "date": "2025-12-23 20:16"
         }
       ]
     },
