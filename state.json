@@ -3,7 +3,12 @@
   "corsair_vergeance": {
     "amazon": {
       "in_stock": false,
-      "prices": []
+      "prices": [
+        {
+          "price": 364.43,
+          "date": "2025-12-23 22:45"
+        }
+      ]
     },
     "overclockers": {
       "in_stock": false,
@@ -58,6 +63,10 @@
         {
           "price": 203.99,
           "date": "2025-12-23 22:26"
+        },
+        {
+          "price": 203.99,
+          "date": "2025-12-23 22:45"
         }
       ]
     },
