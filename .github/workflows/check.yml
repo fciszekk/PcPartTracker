@@ -1,0 +1,30 @@
+name: Stock Tracker
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tracker
+        run: python tracker.py
+
+      - name: Save state
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "bot@github.com"
+          git add state.json
+          git commit -m "Update price history" || true
+          git push
