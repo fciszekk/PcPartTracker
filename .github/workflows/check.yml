@@ -5,6 +5,11 @@ on:
     - cron: "*/30 * * * *"
   workflow_dispatch:
 
+env:
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+  EMAIL_FROM: ${{ secrets.FROM_EMAIL }}
+  EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
 jobs:
   run:
     runs-on: ubuntu-latest
