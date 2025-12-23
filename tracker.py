@@ -58,7 +58,7 @@ def send_discord(product, price, history):
     ) or "No history"
 
     embed = {
-        "title": f"🛒 {product_name} — {site.upper()}"
+        "title": f"🛒 {product_name} — {site.upper()}",
         "description": f"[Buy Link]({product['url']})",
         "color": 3066993,
         "fields": [
