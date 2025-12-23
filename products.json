@@ -1,9 +1,33 @@
 [
   {
-    "name": "Corsair Vengeance DDR5 RAM 16gb (2x8gb) 5200Mhz CL40",
-    "url": "https://www.amazon.co.uk/dp/B0BZHXGYWS",
-    "site": "amazon",
-    "currency": "EUR",
-    "max_price": 150
+    "id": "corsair_vergeance",
+    "name": "Corsair VENGEANCE DDR5 RAM 16GB (2x8GB) 5200MHz CL40",
+    "max_price": {
+      "GBP": 125,
+      "EUR": 150,
+      "USD": 150
+    },
+    "sites": [
+      {
+        "site": "amazon",
+        "currency": "EUR",
+        "url": "https://www.amazon.ie/dp/B0BZHXGYWS"
+      },
+      {
+        "site": "overclockers",
+        "currency": "GBP",
+        "url": "https://www.overclockers.co.uk/corsair-vengeance-16gb-2x8gb-ddr5-pc5-41600c40-5200mhz-dual-channel-mem-crs-02784.html"
+      },
+      {
+        "site": "newegg",
+        "currency": "GBP",
+        "url": "https://www.newegg.com/global/uk-en/corsair-vengeance-16gb-ddr5-5200-cas-latency-cl40-desktop-memory-black/p/N82E16820236993"
+      },
+      {
+        "site": "paradigit",
+        "currency": "EUR",
+        "url": "https://www.paradigit.ie/corsair-vengeance-16-gb-ddr5-dimm/21301018/product"
+      }
+    ]
   }
 ]
