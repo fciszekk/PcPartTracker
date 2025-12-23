@@ -2,11 +2,12 @@ import requests, json, random, datetime
 from bs4 import BeautifulSoup
 from email.message import EmailMessage
 import smtplib
+import os
 
 # ================= CONFIG =================
-DISCORD_WEBHOOK = ${{ secrets.DISCORD_WEBHOOK }}
-EMAIL_FROM = ${{ secrets.FROM_EMAIL }}
-EMAIL_PASSWORD = ${{ secrets.EMAIL_PASSWORD }}
+DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
+EMAIL_FROM = os.environ["EMAIL_FROM"]
+EMAIL_PASSWORD = os.environ["EMAIL_PASSWORD"]
 # =========================================
 
 def get_headers():
