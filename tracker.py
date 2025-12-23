@@ -17,19 +17,34 @@ def get_headers():
 def fetch(url):
     return requests.get(url, headers=get_headers(), timeout=20)
 
+def parse_price(price_str):
+    """
+    Convert price string to float.
+    Removes currency symbols, commas, spaces.
+    Returns None if conversion fails.
+    """
+    if not price_str:
+        return None
+    # Remove anything that's not a digit or dot
+    cleaned = "".join(c for c in price_str if c.isdigit() or c == ".")
+    try:
+        return float(cleaned)
+    except:
+        return None
+
 # ---------- SITE PARSERS ----------
 
 def parse_amazon(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
-    price = soup.select_one("span.a-offscreen")
-    price = float(price.text.replace("£","").replace(",","")) if price else None
+    price_tag = soup.select_one("span.a-offscreen")
+    price = parse_price(price_tag.text) if price_tag else None
     in_stock = soup.find(id="add-to-cart-button") is not None
     return in_stock, price
 
 def parse_overclockers(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
     price_tag = soup.select_one(".price, .incvat")
-    price = float(price_tag.text.replace("£","").replace(",","")) if price_tag else None
+    price = parse_price(price_tag.text) if price_tag else None
     in_stock = "In Stock" in soup.text
     return in_stock, price
 
@@ -37,14 +52,15 @@ def parse_newegg(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
     strong = soup.select_one(".price-current strong")
     sup = soup.select_one(".price-current sup")
-    price = float(f"{strong.text}{sup.text}") if strong and sup else None
+    price_str = f"{strong.text}{sup.text}" if strong and sup else None
+    price = parse_price(price_str)
     in_stock = soup.find("button", string=lambda x: x and "Add to cart" in x) is not None
     return in_stock, price
 
 def parse_paradigit(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
     meta = soup.find("meta", itemprop="price")
-    price = float(meta["content"]) if meta else None
+    price = parse_price(meta["content"]) if meta else None
     in_stock = "Op voorraad" in soup.text or "inStock" in soup.text
     return in_stock, price
 
