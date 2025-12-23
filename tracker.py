@@ -1,7 +1,7 @@
 import requests, json, random, datetime
 from bs4 import BeautifulSoup
 
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1453085062290477168/rKLmG2mVIkNmzLA9qKjIbYBUYFefxH3VxvkkuECWavBFFDkyEcYgJZ0r3HZte4QHVQ4g"
+DISCORD_WEBHOOK = ${{ secrets.DISCORD_WEBHOOK }}
 
 def get_headers():
     with open("user_agents.txt") as f:
