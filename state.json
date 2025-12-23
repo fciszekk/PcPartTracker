@@ -1,1 +1,49 @@
-{}
+{
+  "last_reset": "2025-12-23T20:21:30.553075",
+  "corsair_vergeance": {
+    "amazon": {
+      "in_stock": false,
+      "prices": []
+    },
+    "overclockers": {
+      "in_stock": false,
+      "prices": []
+    },
+    "newegg": {
+      "in_stock": false,
+      "prices": []
+    },
+    "paradigit": {
+      "in_stock": false,
+      "prices": []
+    }
+  },
+  "motherboard": {
+    "amazon": {
+      "in_stock": false,
+      "prices": [
+        {
+          "price": 364.43,
+          "date": "2025-12-23 20:21"
+        }
+      ]
+    },
+    "overclockers": {
+      "in_stock": false,
+      "prices": []
+    },
+    "newegg": {
+      "in_stock": false,
+      "prices": [
+        {
+          "price": 203.99,
+          "date": "2025-12-23 20:21"
+        }
+      ]
+    },
+    "paradigit": {
+      "in_stock": false,
+      "prices": []
+    }
+  }
+}
