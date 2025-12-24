@@ -63,9 +63,12 @@ def parse_newegg(url):
 
 def parse_paradigit(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
-    meta = soup.find("meta", itemprop="price")
-    price = parse_price(meta["content"]) if meta else None
-    in_stock = "Op voorraad" in soup.text or "inStock" in soup.text
+    excl = soup.find("div", class_="productdetail_product_exclvat")
+    if excl:
+        excl.decompose()   # deletes that div and its contents[web:12][web:15]
+    meta = soup.find("div", class_="productdetail_product_inclvat")
+    price = parse_price(meta.get_text(strip=True)) if meta else None
+    in_stock = "Add To Basket" in soup.text or "In stock" in soup.text
     return in_stock, price
 
 # ---------- NOTIFICATIONS ----------
