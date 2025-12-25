@@ -73,20 +73,20 @@ def parse_paradigit(url):
 
 # ---------- NOTIFICATIONS ----------
 
-def send_discord(product, price, history):
+def send_discord(product_name, site, price, max_price, currency, history, url):
     recent = history[-5:]
     history_text = "\n".join(
-        f"{h['date']} → {product['currency']} {h['price']}"
+        f"{h['date']} → {currency} {h['price']}"
         for h in recent
     ) or "No history"
 
     embed = {
         "title": f"🛒 {product_name} — {site.upper()}",
-        "description": f"[Buy Link]({product['url']})",
+        "description": f"[Buy Link]({url})",
         "color": 3066993,
         "fields": [
-            {"name": "Price", "value": f"{product['currency']} {price}", "inline": True},
-            {"name": "Target", "value": f"{product['currency']} {product['max_price']}", "inline": True},
+            {"name": "Price", "value": f"{currency} {price}", "inline": True},
+            {"name": "Target", "value": f"{currency} {max_price}", "inline": True},
             {"name": "Price History", "value": history_text[:1024], "inline": False}
         ],
         "timestamp": datetime.datetime.utcnow().isoformat()
@@ -189,6 +189,7 @@ def main():
                     product_name=product["name"],
                     site=site_name,
                     price=price,
+                    max_price=target
                     currency=currency,
                     history=site_state["prices"],
                     url=url
