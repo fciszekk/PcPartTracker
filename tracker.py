@@ -21,6 +21,13 @@ def get_headers():
 def fetch(url):
     return requests.get(url, headers=get_headers(), timeout=20)
 
+def fetch_newegg(url):
+    return requests.get(
+        url,
+        headers={"User-Agent": random.choice(USER_AGENTS_FILE)},
+        timeout=15
+    )
+
 def parse_price(price_str):
     """
     Convert price string to float.
@@ -40,7 +47,7 @@ def parse_price(price_str):
 
 def parse_amazon(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
-    price_tag = soup.select_one("span.a-offscreen")
+    price_tag = soup.select_one("span.aok-offscreen")
     price = parse_price(price_tag.text) if price_tag else None
     in_stock = soup.find(id="add-to-cart-button") is not None
     return in_stock, price
@@ -53,13 +60,24 @@ def parse_overclockers(url):
     return in_stock, price
 
 def parse_newegg(url):
-    soup = BeautifulSoup(fetch(url).text, "html.parser")
+    soup = BeautifulSoup(fetch_newegg(url).text, "html.parser")
+    price = None
     strong = soup.select_one(".price-current strong")
     sup = soup.select_one(".price-current sup")
-    price_str = f"{strong.text}{sup.text}" if strong and sup else None
-    price = parse_price(price_str)
-    in_stock = soup.find("button", string=lambda x: x and "Add to cart" in x) is not None
-    return in_stock, price
+    if strong and sup:
+        price = parse_price(f"{strong.text}{sup.text}")
+
+    if soup.find(string=lambda x: x and "OUT OF STOCK" in x.upper()):
+        return False, price
+    add_to_cart = soup.select_one("button.btn-primary")
+    if add_to_cart:
+        disabled = add_to_cart.get("disabled")
+        text = add_to_cart.text.lower()
+        if "add to" in text and not disabled:
+            return True, price
+    if soup.find(string=lambda x: x and "auto notify" in x.lower()):
+        return False, price
+    return False, price
 
 def parse_paradigit(url):
     soup = BeautifulSoup(fetch(url).text, "html.parser")
