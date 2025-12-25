@@ -29,36 +29,5 @@
         "url": "https://www.paradigit.ie/corsair-vengeance-16-gb-ddr5-dimm/21301018/product"
       }
     ]
-  },
-  {
-    "id": "motherboard",
-    "name": "Motherboard Test",
-    "max_price": {
-      "GBP": 500,
-      "EUR": 400,
-      "USD": 400
-    },
-    "sites": [
-      {
-        "site": "amazon",
-        "currency": "EUR",
-        "url": "https://www.amazon.ie/dp/B0BSLJCK6F"
-      },
-      {
-        "site": "overclockers",
-        "currency": "GBP",
-        "url": "https://www.overclockers.co.uk/asus-rog-strix-b760-f-gaming-wifi-lga-1700-ddr5-atx-motherboard-mb-6kd-as.html"
-      },
-      {
-        "site": "newegg",
-        "currency": "GBP",
-        "url": "https://www.newegg.com/p/N82E16813119743"
-      },
-      {
-        "site": "paradigit",
-        "currency": "EUR",
-        "url": "https://www.paradigit.ie/ASRock-B650M-HDV-M-2/21299965/product"
-      }
-    ]
   }
 ]
