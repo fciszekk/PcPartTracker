@@ -189,7 +189,7 @@ def main():
                     product_name=product["name"],
                     site=site_name,
                     price=price,
-                    max_price=target
+                    max_price=target,
                     currency=currency,
                     history=site_state["prices"],
                     url=url
