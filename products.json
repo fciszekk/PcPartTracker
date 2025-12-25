@@ -35,24 +35,24 @@
     "name": "Motherboard Test",
     "max_price": {
       "GBP": 500,
-      "EUR": 150,
-      "USD": 150
+      "EUR": 400,
+      "USD": 400
     },
     "sites": [
       {
         "site": "amazon",
         "currency": "EUR",
-        "url": "https://www.amazon.ie/dp/B0BZHXGYWS"
+        "url": "https://www.amazon.ie/dp/B0BSLJCK6F"
       },
       {
         "site": "overclockers",
         "currency": "GBP",
-        "url": "https://www.overclockers.co.uk/corsair-vengeance-16gb-2x8gb-ddr5-pc5-41600c40-5200mhz-dual-channel-mem-crs-02784.html"
+        "url": "https://www.overclockers.co.uk/asus-rog-strix-b760-f-gaming-wifi-lga-1700-ddr5-atx-motherboard-mb-6kd-as.html"
       },
       {
         "site": "newegg",
         "currency": "GBP",
-        "url": "https://www.newegg.com/global/uk-en/corsair-vengeance-16gb-ddr5-5200-cas-latency-cl40-desktop-memory-black/p/N82E16820236993"
+        "url": "https://www.newegg.com/p/N82E16813119743"
       },
       {
         "site": "paradigit",
