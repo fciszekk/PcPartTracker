@@ -2,7 +2,7 @@
   "last_reset": "2026-03-05T23:15:34.093909",
   "corsair_vergeance": {
     "amazon": {
-      "in_stock": true,
+      "in_stock": false,
       "prices": [
         {
           "price": 332.82,
@@ -148,6 +148,10 @@
         {
           "price": 350.99,
           "date": "2026-03-06 00:04"
+        },
+        {
+          "price": 350.99,
+          "date": "2026-03-06 03:13"
         }
       ]
     }
