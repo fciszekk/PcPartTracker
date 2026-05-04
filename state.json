@@ -14,7 +14,7 @@
       "prices": []
     },
     "paradigit": {
-      "in_stock": true,
+      "in_stock": false,
       "prices": [
         {
           "price": 256.99,
@@ -123,6 +123,10 @@
         {
           "price": 256.99,
           "date": "2026-05-04 16:53"
+        },
+        {
+          "price": 256.99,
+          "date": "2026-05-04 18:21"
         }
       ]
     }
