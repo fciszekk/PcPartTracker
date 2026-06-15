@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-06-14T21:52:27.604795",
+  "last_reset": "2026-06-15T22:00:36.308946",
   "corsair_vergeance": {
     "amazon": {
       "in_stock": false,
@@ -10,7 +10,7 @@
       "prices": []
     },
     "newegg": {
-      "in_stock": true,
+      "in_stock": false,
       "prices": [
         {
           "price": 269.99,
