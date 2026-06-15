@@ -10,8 +10,13 @@
       "prices": []
     },
     "newegg": {
-      "in_stock": false,
-      "prices": []
+      "in_stock": true,
+      "prices": [
+        {
+          "price": 269.99,
+          "date": "2026-06-15 19:12"
+        }
+      ]
     },
     "paradigit": {
       "in_stock": false,
