@@ -20,7 +20,12 @@
     },
     "paradigit": {
       "in_stock": false,
-      "prices": []
+      "prices": [
+        {
+          "price": 256.99,
+          "date": "2026-06-16 17:09"
+        }
+      ]
     }
   },
   "motherboard": {
