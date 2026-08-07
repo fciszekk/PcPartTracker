@@ -2,8 +2,13 @@
   "last_reset": "2026-08-07T00:42:43.025366",
   "corsair_vergeance": {
     "amazon": {
-      "in_stock": false,
-      "prices": []
+      "in_stock": true,
+      "prices": [
+        {
+          "price": 279.17,
+          "date": "2026-08-07 05:45"
+        }
+      ]
     },
     "overclockers": {
       "in_stock": false,
@@ -47,6 +52,10 @@
         {
           "price": 247.99,
           "date": "2026-08-07 03:53"
+        },
+        {
+          "price": 247.99,
+          "date": "2026-08-07 05:45"
         }
       ]
     }
