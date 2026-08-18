@@ -2,7 +2,7 @@
   "last_reset": "2026-08-17T08:51:24.269728",
   "corsair_vergeance": {
     "amazon": {
-      "in_stock": true,
+      "in_stock": false,
       "prices": [
         {
           "price": 279.17,
@@ -41,10 +41,6 @@
     "paradigit": {
       "in_stock": true,
       "prices": [
-        {
-          "price": 266.99,
-          "date": "2026-08-16 10:53"
-        },
         {
           "price": 266.99,
           "date": "2026-08-16 11:25"
@@ -240,6 +236,10 @@
         {
           "price": 266.99,
           "date": "2026-08-18 05:03"
+        },
+        {
+          "price": 266.99,
+          "date": "2026-08-18 05:55"
         }
       ]
     }
