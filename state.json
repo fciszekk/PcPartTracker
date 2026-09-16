@@ -1,14 +1,9 @@
 {
-  "last_reset": "2026-09-14T23:48:06.490374",
+  "last_reset": "2026-09-16T00:43:05.952721",
   "corsair_vergeance": {
     "amazon": {
       "in_stock": false,
-      "prices": [
-        {
-          "price": 297.96,
-          "date": "2026-09-14 16:54"
-        }
-      ]
+      "prices": []
     },
     "overclockers": {
       "in_stock": false,
@@ -20,16 +15,7 @@
     },
     "paradigit": {
       "in_stock": false,
-      "prices": [
-        {
-          "price": 277.99,
-          "date": "2026-09-14 00:01"
-        },
-        {
-          "price": 277.99,
-          "date": "2026-09-14 05:20"
-        }
-      ]
+      "prices": []
     }
   },
   "motherboard": {
