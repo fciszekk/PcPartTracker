@@ -6,8 +6,13 @@
       "prices": []
     },
     "overclockers": {
-      "in_stock": false,
-      "prices": []
+      "in_stock": true,
+      "prices": [
+        {
+          "price": 248.99,
+          "date": "2026-10-19 11:07"
+        }
+      ]
     },
     "newegg": {
       "in_stock": false,
