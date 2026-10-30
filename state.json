@@ -6,7 +6,7 @@
       "prices": []
     },
     "overclockers": {
-      "in_stock": false,
+      "in_stock": true,
       "prices": [
         {
           "price": 259.99,
@@ -39,6 +39,10 @@
         {
           "price": 259.99,
           "date": "2026-10-30 15:14"
+        },
+        {
+          "price": 259.99,
+          "date": "2026-10-30 20:02"
         }
       ]
     },
