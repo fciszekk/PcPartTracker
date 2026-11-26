@@ -1,5 +1,5 @@
 {
-  "last_reset": "2026-11-25T15:57:02.849967",
+  "last_reset": "2026-11-26T18:55:10.508718",
   "corsair_vergeance": {
     "amazon": {
       "in_stock": false,
@@ -10,23 +10,15 @@
       "prices": [
         {
           "price": 269.99,
-          "date": "2026-11-24 22:41"
-        },
-        {
-          "price": 269.99,
-          "date": "2026-11-25 05:19"
-        },
-        {
-          "price": 269.99,
-          "date": "2026-11-25 15:57"
-        },
-        {
-          "price": 269.99,
           "date": "2026-11-26 00:09"
         },
         {
           "price": 269.99,
           "date": "2026-11-26 08:47"
+        },
+        {
+          "price": 269.99,
+          "date": "2026-11-26 18:55"
         }
       ]
     },
@@ -35,8 +27,13 @@
       "prices": []
     },
     "paradigit": {
-      "in_stock": false,
-      "prices": []
+      "in_stock": true,
+      "prices": [
+        {
+          "price": 308.99,
+          "date": "2026-11-26 18:55"
+        }
+      ]
     }
   },
   "motherboard": {
